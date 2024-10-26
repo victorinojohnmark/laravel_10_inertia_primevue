@@ -82,7 +82,7 @@ watchEffect(() => {
     <div>
         <div class="min-h-screen">
             <nav
-                class="bg-surface-0 dark:bg-gray-900 border-b"
+                class="bg-surface-0 dark:bg-surface-900 border-b"
                 :class="
                     $slots.header
                         ? 'border-surface-100 dark:border-surface-800'

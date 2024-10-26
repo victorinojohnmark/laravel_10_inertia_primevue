@@ -113,6 +113,7 @@ const updatePassword = () => {
                     type="submit"
                     :loading="form.processing"
                     label="Save"
+                    
                 />
 
                 <Transition

@@ -86,11 +86,7 @@ onMounted(() => {
             <div v-if="mustVerifyEmail && user.email_verified_at === null">
                 <p class="text-sm mt-2">
                     Your email address is unverified.
-                    <Link
-                        :href="route('verification.send')"
-                        method="post"
-                        class="underline text-sm text-muted-color hover:text-color"
-                    >
+                    <Link :href="route('verification.send')" method="post" as="button" class="underline text-sm text-muted-color hover:text-color bg-transparent hover:cursor-pointer">
                         Click here to re-send the verification email.
                     </Link>
                 </p>
@@ -110,6 +106,7 @@ onMounted(() => {
                     type="submit"
                     :loading="form.processing"
                     label="Save"
+                    
                 />
 
                 <Transition

@@ -7,16 +7,21 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Auth\Middleware\RedirectIfAuthenticated as DefaultRedirectIfAuthenticated;
 
 class RedirectIfAuthenticated
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
+
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
+
+        // Check if the user is authenticated as 'admin'
+        if (Auth::guard('admin')->check()) {
+            if (!$request->is('admin/login')) {
+                return redirect()->route('admin.dashboard');
+            }
+        }
+
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {

@@ -41,18 +41,12 @@ const verificationLinkSent = computed(
         <form @submit.prevent="submit">
             <div class="mt-6 flex justify-between items-center">
                 <Button
-                    raised
                     type="submit"
                     :loading="form.processing"
                     label="Resend Verification Email"
-                    severity="contrast"
+                    
                 />
-                <Link
-                    :href="route('logout')"
-                    method="post"
-                    class="text-muted-color underline text-muted-color hover:text-color"
-                    >Log Out</Link
-                >
+                <Link :href="route('logout')" method="post" as="button" class="underline text-muted-color hover:text-color bg-transparent hover:cursor-pointer">Log Out</Link>
             </div>
         </form>
     </GuestLayout>
