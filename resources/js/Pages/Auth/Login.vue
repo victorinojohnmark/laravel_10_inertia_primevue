@@ -100,6 +100,7 @@ onMounted(() => {
                     type="submit"
                     :loading="form.processing"
                     label="Log In"
+                    
                 />
             </div>
         </form>

@@ -63,6 +63,7 @@ onMounted(() => {
                     type="submit"
                     :loading="form.processing"
                     label="Email Password Reset Link"
+                    
                 />
             </div>
         </form>
