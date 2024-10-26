@@ -15,7 +15,5 @@ Route::get('/', function () {
     ]);
 })->name('welcome');
 
-Auth::routes(['verify' => true]);
-
 require __DIR__ . '/user/web.php';
 require __DIR__ . '/admin/web.php';
