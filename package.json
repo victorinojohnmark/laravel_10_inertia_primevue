@@ -20,5 +20,8 @@
         "tailwindcss-primeui": "^0.3.4",
         "vite": "^5.0.0",
         "vue": "^3.4.0"
+    },
+    "dependencies": {
+        "quill": "^2.0.2"
     }
 }

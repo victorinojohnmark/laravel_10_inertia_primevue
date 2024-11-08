@@ -10,8 +10,17 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import PrimeVue from 'primevue/config';
 import ToastService from 'primevue/toastservice';
 import Tooltip from 'primevue/tooltip';
+import Checkbox from 'primevue/checkbox';
 import InputText from 'primevue/inputtext';
+import Textarea from 'primevue/textarea';
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
+import Paginator from 'primevue/paginator';
 import Button from 'primevue/button';
+import Dialog from 'primevue/dialog';
+import Editor from 'primevue/editor';
+import Tag from 'primevue/tag';
+import Message from 'primevue/message';
 
 import { useTheme } from '@/Composables/useTheme.js';
 import customThemePreset from '@/theme-preset.js';
@@ -35,7 +44,16 @@ createInertiaApp({
             .component('Head', Head)
             .component('Link', Link)
             .component('InputText', InputText)
+            .component('Textarea', Textarea)
+            .component('Checkbox', Checkbox)
+            .component('Editor', Editor)
             .component('Button', Button)
+            .component('Datatable', DataTable)
+            .component('Paginator', Paginator)
+            .component('Column', Column)
+            .component('Dialog', Dialog)
+            .component('Message', Message)
+            .component('Tag', Tag)
             .directive('tooltip', Tooltip)
             .mount(el);
     },

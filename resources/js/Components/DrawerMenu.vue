@@ -17,16 +17,16 @@ const homeMenuItems = ref([
     {
         label: 'Dashboard',
         icon: 'pi pi-th-large',
-        route: route('admin.dashboard'),
-        active: currentRoute == 'admin.dashboard',
+        route: route('dashboard'),
+        active: currentRoute == 'dashboard',
     },
 ]);
 const analyticsMenuItems = ref([
     {
         label: 'Users',
         icon: 'pi pi-user',
-        route: route('admin.users.index'),
-        active: currentRoute == 'admin.users.index',
+        route: route('welcome'),
+        active: currentRoute == 'welcome',
     },
 ]);
 const exampleNestedMenuItems = ref([
@@ -74,7 +74,7 @@ const exampleNestedMenuItems = ref([
     <Drawer
         v-model:visible="model"
         position="left"
-        :autoZIndex="false"
+        :autoZIndex="false" header="IBMS"
     >
         <div>
             <div class="mb-5">

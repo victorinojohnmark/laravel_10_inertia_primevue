@@ -30,21 +30,21 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-        if (Auth::guard('web')->check()) {
-            $authenticatedUser = $request->user('web');
-        } elseif (Auth::guard('admin')->check()) {
-            $authenticatedUser = $request->user('admin');
-        } else {
-            $authenticatedUser = $request->user();
-        }
 
         return [
             ...parent::share($request),
             'auth' => [
-                'user' => $authenticatedUser,
+                'user' => $request->user(),
             ],
             'request' => [
                 'urlParams' => $request->all(),
+            ],
+            'flash' => [
+                'message' => fn () => $request->session()->get('message'),
+                'success' => fn () => $request->session()->get('success'),
+                'info' => fn () => $request->session()->get('info'),
+                'error' => fn () => $request->session()->get('error'),
+                'warning' => fn () => $request->session()->get('warning')
             ],
         ];
     }

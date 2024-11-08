@@ -10,9 +10,6 @@ const props = defineProps({
     canRegister: {
         type: Boolean,
     },
-    isAdmin: {
-        type: Boolean,
-    },
     laravelVersion: {
         type: String,
         required: true,
@@ -24,7 +21,7 @@ const props = defineProps({
 });
 
 const dashboardRoute = computed(() => {
-    return props.isAdmin ? route('admin.dashboard') : route('dashboard');
+    return route('dashboard');
 });
 </script>
 
@@ -66,7 +63,7 @@ const dashboardRoute = computed(() => {
                                 class="mr-4"
                             />
                         </Link>
-                        <Link v-if="!isAdmin" :href="route('profile.edit')">
+                        <Link :href="route('profile.edit')">
                             <Button
                                 outlined
                                 label="Profile"
